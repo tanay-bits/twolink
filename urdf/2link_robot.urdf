@@ -1,0 +1,36 @@
+<!-- <?xml version="1.0"?> -->
+<robot name="2link_robot">
+	<material name="blue">
+		<color rgba="0 0 .8 1"/>
+	</material>
+	<material name="white">
+		<color rgba="1 1 1 1"/>
+	</material>
+
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<box size="0.7 .1 .1"/>
+			</geometry>
+			<material name="blue"/>
+		</visual>
+	</link>
+
+	<link name="second_link">
+		<visual>
+			<geometry>
+				<box size="0.7 .1 .1"/>
+			</geometry>
+			<material name="white"/>
+		</visual>
+	</link>
+
+	<joint name="joint1" type="continuous">
+		<axis rpy="0 0 0" xyz="0 0 1"/>
+		<parent link="base_link"/>
+		<child link="second_link"/>
+		<origin rpy="0 0 0" xyz="0.6 0 0"/>
+	</joint>
+</robot>
+
+

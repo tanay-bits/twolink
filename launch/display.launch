@@ -1,8 +1,8 @@
 <launch>
 
   <!-- <arg name="model" default="$(find twolink)/urdf/2link_robot.urdf"/> -->
-  <arg name="gui" default="false" />
-  <arg name="rvizconfig" default="rviz/myconfig.rviz" />
+  <arg name="gui" default="true" />
+  <arg name="rvizconfig" default="$(find twolink)/rviz/rvizconfig.rviz" />
 
   <param name="robot_description" textfile="$(find twolink)/urdf/2link_robot.urdf" />
   <param name="use_gui" value="$(arg gui)"/>

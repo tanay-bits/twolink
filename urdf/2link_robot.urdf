@@ -1,4 +1,3 @@
-<!-- <?xml version="1.0"?> -->
 <robot name="2link_robot">
 	<material name="blue">
 		<color rgba="0 0 .8 1"/>

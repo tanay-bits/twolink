@@ -1,10 +1,10 @@
 <launch>
 
   <!-- <arg name="model" default="$(find twolink)/urdf/2link_robot.urdf"/> -->
-  <arg name="gui" default="true" />
-  <arg name="rvizconfig" default="$(find urdf_tutorial	)/rviz/urdf.rviz" />
+  <arg name="gui" default="false" />
+  <arg name="rvizconfig" default="rviz/myconfig.rviz" />
 
-  <param name="robot_description" command="$(find twolink)/urdf/2link_robot.urdf" />
+  <param name="robot_description" textfile="$(find twolink)/urdf/2link_robot.urdf" />
   <param name="use_gui" value="$(arg gui)"/>
 
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />

@@ -189,3 +189,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+# add_executable(parser src/parser.cpp)
+# target_link_libraries(parser ${catkin_LIBRARIES})

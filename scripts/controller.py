@@ -4,9 +4,9 @@ import rospy
 from sensor_msgs.msg import JointState
 from math import sin, cos, acos, atan2, pi, sqrt
 
-def desired_thetas(t):
-    xd = 0.5*cos(2*pi*t/5.0) + 1.25
-    yd = 0.5*sin(2*pi*t/5.0)
+def desired_thetas(t, T):
+    xd = 0.5*cos(2*pi*t/T) + 1.25
+    yd = 0.5*sin(2*pi*t/T)
     r = sqrt(xd**2 + yd**2)
 
     alpha = acos(1 - (r**2)/2)
@@ -23,7 +23,10 @@ def sender():
     jspub = rospy.Publisher('joint_states', JointState, queue_size=10)
 
     rospy.init_node('controller_node')
-    rate = rospy.Rate(50)
+    R = rospy.get_param('~controller_pub_rate')
+    rate = rospy.Rate(R)
+
+    T = rospy.get_param('~period')
 
     cmd = JointState()
 
@@ -32,7 +35,7 @@ def sender():
         t = rospy.get_time()
 
         cmd.name = ['baseHinge', 'interArm']
-        cmd.position = desired_thetas(t)
+        cmd.position = desired_thetas(t, T)
 
         jspub.publish(cmd)
 

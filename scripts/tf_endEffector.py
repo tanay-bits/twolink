@@ -12,6 +12,21 @@ if __name__ == '__main__':
     listener = tf.TransformListener()
 
     marker_pub = rospy.Publisher('visualization_marker', Marker, queue_size=100)
+
+    marker = Marker()
+    marker.id = 0
+    marker.header.frame_id = 'base'
+    marker.header.stamp = rospy.Time.now()
+    marker.type = Marker.LINE_STRIP
+    marker.ns = 'tf_endEffector_node'
+    marker.action = Marker.ADD
+    marker.scale.x = .1
+    # marker.scale.y = .1
+    marker.pose.orientation.w = 1.0
+    marker.color.a = 1.0
+    marker.color.g = 1.0
+
+    # marker.lifetime = rospy.Duration(1)
     
     R = rospy.get_param('~tf_ee_pub_rate')
     rate = rospy.Rate(R)
@@ -25,22 +40,6 @@ if __name__ == '__main__':
         newpoint.x = trans[0]
         newpoint.y = trans[1]
         newpoint.z = trans[2]
-
-        marker = Marker()
-        marker.id = 0
-        marker.header.frame_id = 'base'
-        marker.header.stamp = rospy.Time.now()
-        marker.type = Marker.POINTS
-        marker.ns = 'tf_endEffector_node'
-        marker.action = Marker.ADD
-        marker.scale.x = .1
-        marker.scale.y = .1
-        marker.pose.orientation.w = 1.0
-        marker.color.a = 1.0
-        marker.color.g = 1.0
-
-        # l = rospy.Duration(2)
-        # marker.lifetime = l
 
         marker.points.append(newpoint)
         

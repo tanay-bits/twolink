@@ -1,6 +1,6 @@
 <launch>
 
-  <arg name="gui" default="true" />
+  <arg name="gui" default="false" />
   <arg name="rvizconfig" default="$(find twolink)/rviz/rvizconfig.rviz" />
 
   <param name="robot_description" textfile="$(find twolink)/urdf/2link_robot.urdf" />
@@ -10,6 +10,9 @@
 
   <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+  <node name="tf_endEffector_node" pkg="twolink" type="tf_endEffector.py" />
+
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
 
 </launch>

@@ -44,7 +44,7 @@
 
 	<link name="endEffector"/>
 
-	<joint name="ee_frame" type="fixed">
+	<joint name="ee_joint" type="fixed">
 		<parent link="arm2"/>
 		<child link="endEffector"/>
 		<origin rpy="0 0 0" xyz="1 0 0"/>

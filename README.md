@@ -1,7 +1,7 @@
 2-Link Robot Inverse Kinematics
 ==========================
 
-![rvizgrab](http://i.imgur.com/OjbZwAK.gifv "rviz screenshot")
+![rvizgrab](http://i.imgur.com/OjbZwAK.gif)
 
 Reference for inverse kinematics formula: [A Mathematical Introduction to Robotic Manipulation](http://www.cds.caltech.edu/~murray/mlswiki/index.php/Main_Page "Reference").
 

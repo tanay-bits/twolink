@@ -1,6 +1,7 @@
 2-Link Robot Inverse Kinematics
 ==========================
-Repository at https://github.com/tanay-bits/twolink
+
+![rvizgrab](http://i.imgur.com/OjbZwAK.gifv "rviz screenshot")
 
 Reference for inverse kinematics formula: [A Mathematical Introduction to Robotic Manipulation](http://www.cds.caltech.edu/~murray/mlswiki/index.php/Main_Page "Reference").
 
